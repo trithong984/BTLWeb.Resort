@@ -142,3 +142,92 @@ function topFunction() {
   document.documentElement.scrollTop = 0; 
 }
 //----------------END BACK TO TOP---------------------
+
+
+
+        var myButton = document.getElementById("myButton");
+        var closeButton = document.getElementById("closeButton");
+        var myDiv = document.getElementById("myDiv");
+        myButton.addEventListener("click", function () {
+            myDiv.style.right = "0";
+            myButton.style.display = "none"; 
+            closeButton.style.opacity = "1"; 
+            closeButton.style.right = "calc(270px)"; 
+            window.addEventListener("scroll", adjustDivPosition); 
+        });
+        closeButton.addEventListener("click", function () {
+            myDiv.style.right = "-50%";
+            myButton.style.display = "block";
+            closeButton.style.opacity = "0"; 
+            closeButton.style.right = "calc(270px)"; 
+            window.removeEventListener("scroll", adjustDivPosition); 
+        });
+
+
+
+
+
+
+
+        function filterProducts() {
+            var under2Checkbox = document.getElementById('under2');
+            var from2to3Checkbox = document.getElementById('from2to3');
+            var above3Checkbox = document.getElementById('above3');
+
+            var function1Checkbox = document.getElementById('function1');
+            var function2Checkbox = document.getElementById('function2');
+            var function3Checkbox = document.getElementById('function3');
+            var function4Checkbox = document.getElementById('function4');
+            var function5Checkbox = document.getElementById('function5');
+
+
+            var productItems = document.getElementsByClassName('pro0');
+            var resultsContainer = document.getElementById('resultsContainer');
+            var noResultsContainer = document.getElementById('noResultsContainer');
+
+            var hasResults = false;
+
+            for (var i = 0; i < productItems.length; i++) {
+                var product = productItems[i];
+                var priceElement = product.querySelector('.price');
+                var price = parseFloat(priceElement.textContent);
+
+                var functionElement = product.querySelector('.rating');
+                var func = parseInt(functionElement.getAttribute('data-rating'));
+
+                var isVisible = true;
+
+                if ((under2Checkbox.checked || from2to3Checkbox.checked || above3Checkbox.checked) && !(
+                    (under2Checkbox.checked && price >= 1 && price < 2) ||
+                    (from2to3Checkbox.checked && price >= 2 && price <= 3) ||
+                    (above3Checkbox.checked && price > 3)
+                )) {
+                    isVisible = false;
+                }
+
+                if ((function1Checkbox.checked || function2Checkbox.checked || function3Checkbox.checked || function4Checkbox.checked || function5Checkbox.checked) && !(
+                    (function1Checkbox.checked && func === 1) ||
+                    (function2Checkbox.checked && func === 2) ||
+                    (function3Checkbox.checked && func === 3) ||
+                    (function4Checkbox.checked && func === 4) ||
+                    (function5Checkbox.checked && func === 5)
+                )) {
+                    isVisible = false;
+                }
+
+                if (isVisible) {
+                    product.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    product.style.display = 'none';
+                }
+            }
+
+            if (hasResults) {
+                resultsContainer.style.display = 'block';
+                noResultsContainer.style.display = 'none';
+            } else {
+                resultsContainer.style.display = 'none';
+                noResultsContainer.style.display = 'block';
+            }
+        }
