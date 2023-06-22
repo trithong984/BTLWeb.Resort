@@ -51,43 +51,8 @@ $(document).ready(function () {
     autoplaySpeed:2000,
   });
 });
-//----------------END SLIDE SHOW---------------------
 
-
-
-
-// ----------SCRIPT HEART---------------
-var favoriteButtons = document.querySelectorAll('.favorite-button');
-var notification = document.querySelector('.notification');
-favoriteButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-        var heartIcon = this.querySelector('i');
-        if (this.classList.contains('favorited')) {
-            this.classList.remove('favorited');
-            heartIcon.classList.add('far');
-            showNotification('Thông báo\nBạn vừa xóa một sản phẩm khỏi danh sách yêu thích');
-        } else {
-            this.classList.add('favorited');
-            heartIcon.classList.remove('far');
-            showNotification('Tuyệt vời\nBạn vừa thêm một sản phẩm vào yêu thích');
-        }
-    });
-});
-
-function showNotification(message) {
-    var notificationMessage = document.querySelector('.notification-message');
-    notificationMessage.innerHTML = message.replace(/\n/g, "<br>");
-
-    notification.classList.add('show');
-    setTimeout(function () {
-        notification.classList.remove('show');
-    }, 3000);
-}
-//------------END SCRIPT HEART----------------
-
-
-
-//--------------SCRIPT NAV-BAR-----------------
+//---------------MENU-SCROLL-DOWN-----------------
 const back_color_menu = document.querySelector('.header');
 const slider = document.querySelector('.section1');
 
@@ -121,30 +86,10 @@ document.getElementById('logo1').style.display='block';
 document.getElementById('menubar2').style.display='none';
 document.getElementById('menubar1').style.display='block';
 }
-//--------------END SCRIPT NAV-BAR-----------------
 
 
 
-
-
-//----------------BACK TO TOP---------------------
-let mybutton = document.getElementById("back-top");
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0; 
-}
-//----------------END BACK TO TOP---------------------
-
-
-
+//--------------LỌC SẢN PHẨM-------------
         var myButton = document.getElementById("myButton");
         var closeButton = document.getElementById("closeButton");
         var myDiv = document.getElementById("myDiv");
@@ -162,13 +107,6 @@ function topFunction() {
             closeButton.style.right = "calc(270px)"; 
             window.removeEventListener("scroll", adjustDivPosition); 
         });
-
-
-
-
-
-
-
         function filterProducts() {
             var under2Checkbox = document.getElementById('under2');
             var from2to3Checkbox = document.getElementById('from2to3');
@@ -233,9 +171,57 @@ function topFunction() {
         }
 
 
-
         
-        const cart = document.querySelector('#cart');
+        var myButton = document.getElementById("myButton");
+        var closeButton = document.getElementById("closeButton");
+        var myDiv = document.getElementById("myDiv");
+        myButton.addEventListener("click", function () {
+            myDiv.style.right = "0";
+            myButton.style.display = "none"; 
+            closeButton.style.opacity = "1"; 
+            closeButton.style.right = "calc(270px)"; 
+            window.addEventListener("scroll", adjustDivPosition); 
+        });
+        closeButton.addEventListener("click", function () {
+            myDiv.style.right = "-50%";
+            myButton.style.display = "block";
+            closeButton.style.opacity = "0"; 
+            closeButton.style.right = "calc(270px)"; 
+            window.removeEventListener("scroll", adjustDivPosition); 
+        });
+
+
+//--------------YÊU THÍCH SẢN PHẨM-------------
+var favoriteButtons = document.querySelectorAll('.favorite-button');
+var notification = document.querySelector('.notification');
+favoriteButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        var heartIcon = this.querySelector('i');
+        if (this.classList.contains('favorited')) {
+            this.classList.remove('favorited');
+            heartIcon.classList.add('far');
+            showNotification('Thông báo\nBạn vừa xóa một sản phẩm khỏi danh sách yêu thích');
+        } else {
+            this.classList.add('favorited');
+            heartIcon.classList.remove('far');
+            showNotification('Tuyệt vời\nBạn vừa thêm một sản phẩm vào yêu thích');
+        }
+    });
+});
+
+function showNotification(message) {
+    var notificationMessage = document.querySelector('.notification-message');
+    notificationMessage.innerHTML = message.replace(/\n/g, "<br>");
+
+    notification.classList.add('show');
+    setTimeout(function () {
+        notification.classList.remove('show');
+    }, 3000);
+}
+
+
+//--------------THÊM GIỎ HÀNG-------------    
+const cart = document.querySelector('#cart');
 const cartModalOverlay = document.querySelector('.cart-modal-overlay');
 
 cart.addEventListener('click', () => {
@@ -370,3 +356,17 @@ function purchaseBtnClicked () {
 }
 
 
+//----------------BACK TO TOP---------------------
+let mybutton = document.getElementById("back-top");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0; 
+}
