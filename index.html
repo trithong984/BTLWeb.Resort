@@ -101,6 +101,11 @@
                           </label>
                         </nav>
                       </div>
+                      <div id="cart" class="cart-header">
+                        <span class="icon_">
+                            <i  class="fa-solid fa-cart-shopping"></i>
+                            <span class ="cart-quantity">0</span></span>
+                    </div>
                     <div class="login-nav">
                         <span class="icon_"><i class="fa-regular fa-user"></i></span>
                     </div>
@@ -190,6 +195,18 @@
                 <p class="removed-message"></p>
             </div>
         </div>
+        <div class="cart-modal-overlay">
+            <div class="cart-modal">
+              <i id="close-btn" class="fas fa-times"></i>
+                <div class="product-rows">
+                </div>
+                <div class="total">
+                  <h6 class="cart-total">Tổng tiền</h6>
+                    <span class="total-price">0đ</span>
+                      <button class="purchase-btn">Thanh toán</button>
+                </div>
+              </div>
+        </div>
         <div id="sanpham" class="section2">
             <div class="container">
                 <a href="./tatcasanpham/tatcasp.html">
@@ -199,7 +216,7 @@
                     <div class="row">
                     <div class="pro col-xl-4  col-md-6 col-12" title="edensee">
                         <div class="price_img">
-                            <img src="./image/edensee.png" class="imgpro1">
+                           <div class="product-img"> <img src="./image/edensee.png" class="imgpro1"></div>
                             <div class="price"> 2.321.000đ/đêm</div>
                         </div>
                         <div class="btn btn_view action favorite-button">
@@ -214,7 +231,7 @@
                                     Spa</a>
                             </h3>
                             <div class="address">KDL hồ Tuyền Lâm, phường 4, TP Đà Lạt</div>
-                        </div>
+                       
                         <div class="pro1_footer">
                             <span class="rating">
                             <span class="fa fa-star checked"></span>
@@ -223,13 +240,14 @@
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star-half-full"></span>
                             <span class="soluotdg">(1.669 lượt đánh giá)</span></span>
-                        
-                            <span class="mathrating">8.5</span>
                         </div>
+                        </div>
+                        <button class="add-to-cart">Đặt ngay</button>
+                        <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
                     </div>
                     <div class="pro col-xl-4  col-md-6 col-12" title="terracotta">
                         <div class="price_img">
-                            <img src="./image/terracotta.png" class="imgpro1">
+                            <div class="product-img"><img src="./image/terracotta.png" class="imgpro1"></div>
                             <div class="price">1.103.000đ/đêm</div>
                         </div>
                         <div class="btn btn_view action favorite-button">
@@ -244,7 +262,6 @@
                                     Terracotta Hotel & Resort Đà Lạt
                                 </a></h3>
                             <div class="address">KDL hồ Tuyền Lâm, phường 3, TP Đà Lạt</div>
-                        </div>
                         <div class="pro1_footer">                            
                              <span class="rating">
                                 <span class="fa fa-star checked"></span>
@@ -253,12 +270,14 @@
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star-half-full"></span>
                                 <span class="soluotdg">(5.144 lượt đánh giá)</span></span>
-                                <span class="mathrating">8.5</span>
                         </div>
+                    </div>
+                        <button class="add-to-cart">Đặt ngay</button>
+                        <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
                     </div>
                     <div class="pro col-xl-4  col-md-6 col-12" title="ana">
                         <div class="price_img">
-                            <img src="./image/ana.png" class="imgpro1">
+                            <div class="product-img"> <img src="./image/ana.png" class="imgpro1"></div>
                             <div class="price">2.539.000đ/đêm</div>
                         </div>
                         <div class="btn btn_view action favorite-button">
@@ -272,7 +291,6 @@
                             <h3 class="product-name"><a href="./tatcasanpham/ana.html">Resort & Hotel Ana Mandara Đà Lạt
                                 </a></h3>
                             <div class="address">Đường Lê Lai, phường 5, TP Đà Lạt</div>
-                        </div>
                         <div class="pro1_footer">
                             <span class="rating">
                                 <span class="fa fa-star checked"></span>
@@ -281,12 +299,16 @@
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="soluotdg">(3.312 lượt đánh giá)</span></span>
-                                <span class="mathrating">8.7</span>
                         </div>
+                    </div> 
+
+                        <button class="add-to-cart">Đặt ngay</button>
+                        <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
+                     
                     </div>
                     <div class="pro col-xl-4 col-md-6 col-12 hidden_product" title="samtuyen">
                         <div class="price_img">
-                            <img src="./image/samtuyen.png" class="imgpro1">
+                            <div class="product-img"><img src="./image/samtuyen.png" class="imgpro1"></div>
                             <div class="price">2.308.000đ/đêm</div>
                         </div>
                         <div class="btn btn_view action favorite-button">
@@ -300,7 +322,6 @@
                             <h3 class="product-name"><a href="./tatcasanpham/samtuyen.html">
                                     Sam Tuyền Lâm Resort Đà Lạt</a></h3>
                             <div class="address"> KDL hồ Tuyền Lâm, phường 3, TP Đà Lạt</div>
-                        </div>
                         <div class="pro1_footer">
                             <span class="rating">
                                 <span class="fa fa-star checked"></span>
@@ -309,9 +330,11 @@
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="soluotdg">(2.584 lượt đánh giá)</span></span>
-                                <span class="mathrating">8.5</span>
                         </div>
                     </div>
+                    <button class="add-to-cart">Đặt ngay</button>
+                    <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
+                </div>
                     </div>
                 </div>
             </div>
@@ -407,7 +430,7 @@
                                 <div class="row">
                             <div class="pro col-xl-4  col-md-6 col-12 pro0" title="edensee">
                                 <div class="price_img">
-                                    <img src="./image/edensee.png" class="imgpro1">
+                                    <div class="product-img"><img src="./image/edensee.png" class="imgpro1"></div>
                                     <div class="price"> 2.321.000đ/đêm</div>
                                 </div>
                                 <div class="btn btn_view action favorite-button">
@@ -422,7 +445,7 @@
                                             & Spa</a>
                                     </h3>
                                     <div class="address">KDL hồ Tuyền Lâm, phường 4, TP Đà Lạt</div>
-                                </div>
+                           
                                 <div class="pro1_footer">
                                     <span class="rating" data-rating="4.5">
                                         <span class="fa fa-star checked"></span>
@@ -431,12 +454,14 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star-half-full checked"></span>
                                         <span class="soluotdg">(1.669 lượt đánh giá)</span></span>
-                                    <span class="mathrating">8.5</span>
                                 </div>
+                            </div>
+                            <button class="add-to-cart">Đặt ngay</button>
+                            <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
                             </div>
                             <div class="pro col-xl-4  col-md-6 col-12 pro0" title="terracotta">
                                 <div class="price_img">
-                                    <img src="./image/terracotta.png" class="imgpro1">
+                                    <div class="product-img"><img src="./image/terracotta.png" class="imgpro1"></div>
                                     <div class="price">1.103.000đ/đêm</div>
                                 </div>
                                 <div class="btn btn_view action favorite-button">
@@ -451,7 +476,7 @@
                                             Terracotta Hotel & Resort Đà Lạt
                                         </a></h3>
                                     <div class="address">KDL hồ Tuyền Lâm, phường 3, TP Đà Lạt</div>
-                                </div>
+                      
                                 <div class="pro1_footer">
                                     <span class="rating" data-rating="4.5">
                                         <span class="fa fa-star checked"></span>
@@ -460,12 +485,14 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star-half-full checked"></span>
                                         <span class="soluotdg">(5.144 lượt đánh giá)</span></span>
-                                    <span class="mathrating">8.5</span>
                                 </div>
                             </div>
+                            <button class="add-to-cart">Đặt ngay</button>
+                            <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
+                        </div>
                             <div class="pro col-xl-4  col-md-6 col-12 pro0" title="romeo">
                                 <div class="price_img">
-                                    <img src="./image/noibat8_.png" class="imgpro1">
+                                    <div class="product-img"><img src="./image/noibat8_.png" class="imgpro1"></div>
                                     <div class="price">692.000đ/đêm</div>
                                 </div>
                                 <div class="btn btn_view action favorite-button">
@@ -479,7 +506,7 @@
                                     <h3 class="product-name"><a href="./tatcasanpham/romeo.html">
                                             Romeo & Juliet Dalat Resort</a></h3>
                                     <div class="address">khu Highland Resort, phường 4, TP Đà Lạt</div>
-                                </div>
+                              
                                 <div class="pro1_footer">
                                     <span class="rating" data-rating="3">
                                         <span class="fa fa-star checked"></span>
@@ -489,9 +516,12 @@
                                     <span class="mathrating">8.2</span>
                                 </div>
                             </div>
+                                <button class="add-to-cart">Đặt ngay</button>
+                                <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
+                            </div>
                             <div class="pro col-xl-4  col-md-6 col-12 pro0" title="zen">
                                 <div class="price_img">
-                                    <img src="./image/noibat9_.png" class="imgpro1">
+                                    <div class="product-img"><img src="./image/noibat9_.png" class="imgpro1"></div>
                                     <div class="price">854.000đ/đêm</div>
                                 </div>
                                 <div class="btn btn_view action favorite-button">
@@ -505,7 +535,7 @@
                                     <h3 class="product-name"><a href="./tatcasanpham/zen.html">Resort Zen Valley Đà Lạt
                                         </a></h3>
                                     <div class="address">38 Khe Sanh, phường 10, TP Đà Lạt</div>
-                                </div>
+                               
                                 <div class="pro1_footer">
                                     <span class="rating" data-rating="3.5">
                                         <span class="fa fa-star checked"></span>
@@ -513,12 +543,14 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star-half-full checked"></span>
                                         <span class="soluotdg">(1.720 lượt đánh giá)</span></span>
-                                    <span class="mathrating">8.6</span>
                                 </div>
+                            </div>
+                                <button class="add-to-cart">Đặt ngay</button>
+                                <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
                             </div>
                             <div class="pro col-xl-4  col-md-6 col-12 pro0" title="wonder">
                                 <div class="price_img">
-                                    <img src="./image/noibat7_.png" class="imgpro1">
+                                    <div class="product-img"><img src="./image/noibat7_.png" class="imgpro1"></div>
                                     <div class="price">814.000đ/đêm</div>
                                 </div>
                                 <div class="btn btn_view action favorite-button">
@@ -532,7 +564,6 @@
                                     <h3 class="product-name"><a href="./tatcasanpham/wonder.html">Dalat Wonder Resort
                                         </a></h3>
                                     <div class="address">19 Hoa Hồng, phường 4, TP Đà Lạt</div>
-                                </div>
                                 <div class="pro1_footer">
                                     <span class="rating" data-rating="3.5">
                                         <span class="fa fa-star checked"></span>
@@ -543,9 +574,12 @@
                                     <span class="mathrating">7.8</span>
                                 </div>
                             </div>
+                            <button class="add-to-cart">Đặt ngay</button>
+                            <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
+                            </div>
                             <div class="pro col-xl-4  col-md-6 col-12 pro0" title="ana">
                                 <div class="price_img">
-                                    <img src="./image/ana.png" class="imgpro1">
+                                    <div class="product-img"><img src="./image/ana.png" class="imgpro1"></div>
                                     <div class="price">2.539.000đ/đêm</div>
                                 </div>
                                 <div class="btn btn_view action favorite-button">
@@ -559,7 +593,6 @@
                                     <h3 class="product-name"><a href="./tatcasanpham/ana.html">Resort Ana Mandara Đà Lạt
                                         </a></h3>
                                     <div class="address">Đường Lê Lai, phường 5, TP Đà Lạt</div>
-                                </div>
                                 <div class="pro1_footer">
                                     <span class="rating" data-rating="5">
                                         <span class="fa fa-star checked"></span>
@@ -568,12 +601,14 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="soluotdg">(3.312 lượt đánh giá)</span></span>
-                                    <span class="mathrating">8.7</span>
                                 </div>
+                            </div>
+                            <button class="add-to-cart">Đặt ngay</button>
+                            <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
                             </div>
                             <div class="pro col-xl-4  col-md-6 col-12 pro0" title="samtuyen">
                                 <div class="price_img">
-                                    <img src="./image/samtuyen.png" class="imgpro1">
+                                    <div class="product-img"><img src="./image/samtuyen.png" class="imgpro1"></div>
                                     <div class="price">2.308.000đ/đêm</div>
                                 </div>
                                 <div class="btn btn_view action favorite-button">
@@ -587,7 +622,6 @@
                                     <h3 class="product-name"><a href="./tatcasanpham/samtuyen.html">
                                             Sam Tuyền Lâm Resort Đà Lạt</a></h3>
                                     <div class="address"> KDL hồ Tuyền Lâm, phường 3, TP Đà Lạt</div>
-                                </div>
                                 <div class="pro1_footer">
                                     <span class="rating" data-rating="5">
                                         <span class="fa fa-star checked"></span>
@@ -596,12 +630,14 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="soluotdg">(2.584 lượt đánh giá)</span></span>
-                                    <span class="mathrating">8.5</span>
                                 </div>
+                            </div>
+                                <button class="add-to-cart">Đặt ngay</button>
+                                <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
                             </div>
                             <div class="pro col-xl-4  col-md-6 col-12 pro0" title="osaka">
                                 <div class="price_img">
-                                    <img src="./image/noibat6_.png" class="imgpro1">
+                                    <div class="product-img"><img src="./image/noibat6_.png" class="imgpro1">/div>
                                     <div class="price">1.019.000đ/đêm</div>
                                 </div>
                                 <div class="btn btn_view action favorite-button">
@@ -616,7 +652,6 @@
                                             Lạt
                                         </a></h3>
                                     <div class="address">62 Đống Đa, phường 3, TP Đà Lạt</div>
-                                </div>
                                 <div class="pro1_footer">
                                     <span class="rating" data-rating="3">
                                         <span class="fa fa-star checked"></span>
@@ -626,34 +661,34 @@
                                     <span class="mathrating">7.8</span>
                                 </div>
                             </div>
-                            <div class="pro col-xl-4  col-md-6 col-12 pro0" title="cereja">
-                                <div class="price_img">
-                                    <img src="./image/ceraja3.png" class="imgpro1">
-                                    <div class="price">1.019.000đ/đêm</div>
-                                </div>
-                                <div class="btn btn_view action favorite-button">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
-                                <div class="detail">
-                                    <span onclick="openForm('cereja')">Xem nhanh
-                                        <span><i class="fa-solid fa-angle-right"></i></span></span>
-                                </div>
-                                <div class="pro1_content">
-                                    <h3 class="product-name"><a href="./tatcasanpham/cereja.html">Cereja Hotel & Resort Đà Lạt
-                                        </a></h3>
-                                    <div class="address">KDL hồ Tuyền Lâm, phường 3, TP Đà Lạt</div>
-                                </div>
-                                <div class="pro1_footer">
-                                    <span class="rating" data-rating="4">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="soluotdg">(245 lượt đánh giá)</span></span>
-                                    <span class="mathrating">7.8</span>
-                                </div>
+                                <button class="add-to-cart">Đặt ngay</button>
+                                <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
                             </div>
                         </div>
+                        <div class="pro col-xl-4  col-md-6 col-12 pro0" title="cereja">
+                            <div class="price_img">
+                                <div class="product-img"><img src="../image/ceraja3.png" class="imgpro1"> </div>
+                                <div class="price">1.019.000đ/đêm</div>
+                            </div>
+                            <div class="detail">
+                                <span onclick="openForm('cereja')">Xem nhanh
+                                    <span><i class="fa-solid fa-angle-right"></i></span></span>
+                            </div>
+                            <div class="pro1_content">
+                                <h3 class="product-name"><a href="./cereja.html">Cereja Hotel & Resort Đà Lạt
+                                    </a></h3>
+                                <div class="address">KDL hồ Tuyền Lâm, phường 3, TP Đà Lạt</div>
+                            <div class="pro1_footer">
+                                <span class="rating" data-rating="4">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="soluotdg">(245 lượt đánh giá)</span></span>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">Đặt ngay</button>
+                        <button class="add-to-cart2">Thêm vào xe đẩy hàng</button>
                     </div>
                     </div>
                     </div>
@@ -1713,6 +1748,7 @@
             </div>
         </div>
     </div>
+        </div>
     <!-- Footer -->
     <div id="lienhe" class="footer1">
         <div class="container">

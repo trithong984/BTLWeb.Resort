@@ -89,7 +89,7 @@ function showNotification(message) {
 
 //--------------SCRIPT NAV-BAR-----------------
 const back_color_menu = document.querySelector('.header');
-const slider = document.querySelector('.background_img');
+const slider = document.querySelector('.section1');
 
 window.addEventListener('scroll', function() {
 const sliderRect = slider.getBoundingClientRect();
@@ -231,3 +231,142 @@ function topFunction() {
                 noResultsContainer.style.display = 'block';
             }
         }
+
+
+
+        
+        const cart = document.querySelector('#cart');
+const cartModalOverlay = document.querySelector('.cart-modal-overlay');
+
+cart.addEventListener('click', () => {
+  if (cartModalOverlay.style.transform === 'translateX(-200%)'){
+    cartModalOverlay.style.transform = 'translateX(0)';
+  } else {
+    cartModalOverlay.style.transform = 'translateX(-200%)';
+  }
+})
+
+const closeBtn = document.querySelector ('#close-btn');
+
+closeBtn.addEventListener('click', () => {
+  cartModalOverlay.style.transform = 'translateX(-200%)';
+});
+
+cartModalOverlay.addEventListener('click', (e) => {
+  if (e.target.classList.contains('cart-modal-overlay')){
+    cartModalOverlay.style.transform = 'translateX(-200%)'
+  }
+})
+
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+const productRow = document.getElementsByClassName('product-row');
+
+for (var i = 0; i < addToCartButtons.length; i++) {
+  const button = addToCartButtons[i];
+  button.addEventListener('click', addToCartClicked);
+}
+
+
+function addToCartClicked(event) {
+  const button = event.target;
+  const cartItem = button.parentElement;
+  const price = cartItem.querySelector('.price').innerText;
+  const imageSrc = cartItem.querySelector('.product-img').src;
+  addItemToCart(price, imageSrc);
+  updateCartPrice();
+}
+function addItemToCart (price, imageSrc) {
+  var productRow = document.createElement('div');
+  productRow.classList.add('product-row');
+  var productRows = document.getElementsByClassName('product-rows')[0];
+  var cartImage = document.getElementsByClassName('cart-image');
+  
+  for (var i = 0; i < cartImage.length; i++){
+    if (cartImage[i].src == imageSrc){
+      alert ('Mặt hàng này đã có ở giỏ hàng')
+      return;
+    }
+  }
+  
+  var cartRowItems = `
+  <div class="product-row">
+        <img class="col-2 cart-image" src="https://cdn6.agoda.net/images/packages/confirm-price.png" alt="">
+        <span class ="cart-price">${price}</span>
+        <input class="col-1 product-quantity" type="number" value="1" style="display:none">
+        <button class="col-2 remove-btn">Xóa</button>
+        </div>
+        
+      `
+  productRow.innerHTML = cartRowItems;
+  productRows.append(productRow);
+  productRow.getElementsByClassName('remove-btn')[0].addEventListener('click', removeItem)
+  productRow.getElementsByClassName('product-quantity')[0].addEventListener('change', changeQuantity)
+  updateCartPrice()
+}
+
+const removeBtn = document.getElementsByClassName('remove-btn');
+for (var i = 0; i < removeBtn.length; i++) {
+  button = removeBtn[i]
+  button.addEventListener('click', removeItem)
+}
+
+function removeItem (event) {
+  btnClicked = event.target
+  btnClicked.parentElement.parentElement.remove()
+  updateCartPrice()
+}
+
+
+var quantityInputs = document.querySelectorAll('.product-quantity');
+
+for (var i = 0; i < quantityInputs.length; i++){
+  var input = quantityInputs[i];
+  input.addEventListener('change', changeQuantity);
+}
+
+function changeQuantity(event) {
+  var input = event.target
+  if (isNaN(input.value) || input.value <= 0){
+    input.value = 1
+  }
+  updateCartPrice()
+}
+
+
+function updateCartPrice() {
+  var total = 0;
+  var uniqueProducts = new Set();
+  var cartRows = document.getElementsByClassName('product-row');
+
+  for (var i = 0; i < cartRows.length; i += 2) {
+    var cartRow = cartRows[i];
+    var priceElement = cartRow.getElementsByClassName('cart-price')[0];
+    var quantityElement = cartRow.getElementsByClassName('product-quantity')[0];
+    var price = parseFloat(priceElement.innerText);
+    var quantity = quantityElement.value;
+    var subTotal = price * quantity;
+    total += subTotal;
+    uniqueProducts.add(cartRow);
+  }
+
+  document.getElementsByClassName('total-price')[0].innerText = total.toFixed(3) + '.000đ';
+  document.getElementsByClassName('cart-quantity')[0].textContent = i /= 2;
+}
+
+const purchaseBtn = document.querySelector('.purchase-btn');
+
+const closeCartModal = document.querySelector('.cart-modal');
+
+purchaseBtn.addEventListener('click', purchaseBtnClicked)
+
+function purchaseBtnClicked () {
+  alert ('Cảm ơn bạn đã thanh toán');
+  cartModalOverlay.style.transform= 'translateX(-100%)'
+ var cartItems = document.getElementsByClassName('product-rows')[0]
+ while (cartItems.hasChildNodes()) {
+   cartItems.removeChild(cartItems.firstChild)
+ }
+  updateCartPrice()
+}
+
+
